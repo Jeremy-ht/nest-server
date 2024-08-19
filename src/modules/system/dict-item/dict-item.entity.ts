@@ -29,4 +29,12 @@ export class DictItemEntity extends CompleteEntity {
   @Column({ type: 'varchar', nullable: true })
   @ApiProperty({ description: '备注' })
   remark: string
+
+  @Column({ type: 'tinyint' })
+  @ApiProperty({ description: '类型' })
+  typeId: number
+
+  @Column({ type: 'tinyint'})
+  @ApiProperty({ description: '字典项排序' })
+  order: number
 }

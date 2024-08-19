@@ -33,8 +33,9 @@ const providers = [EntityExistConstraint, UniqueConstraint]
         return {
           ...configService.get<IDatabaseConfig>('database'),
           autoLoadEntities: true,
-          logging: loggerOptions,
-          logger: new TypeORMLogger(loggerOptions),
+          logging: true,
+          logger: "file",
+          timezone: '+08:00',
         }
       },
       // dataSource receives the configured DataSourceOptions

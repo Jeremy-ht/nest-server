@@ -19,15 +19,16 @@ import { ImageCaptcha } from '../models/auth.model'
 // @UseGuards(ThrottlerGuard)
 @Controller('auth/captcha')
 export class CaptchaController {
-  constructor(@InjectRedis() private redis: Redis) {}
+  constructor(@InjectRedis() private redis: Redis) {
+  }
 
   @Get('img')
-  @ApiOperation({ summary: '获取登录图片验证码' })
-  @ApiResult({ type: ImageCaptcha })
+  @ApiOperation({summary: '获取登录图片验证码'})
+  @ApiResult({type: ImageCaptcha})
   @Public()
   // @Throttle({ default: { limit: 2, ttl: 600000 } })
   async captchaByImg(@Query() dto: ImageCaptchaDto): Promise<ImageCaptcha> {
-    const { width, height } = dto
+    const {width, height} = dto
 
     const svg = svgCaptcha.create({
       size: 4,
@@ -42,6 +43,7 @@ export class CaptchaController {
         'base64',
       )}`,
       id: generateUUID(),
+      text: svg.text
     }
     // 5分钟过期时间
     await this.redis.set(genCaptchaImgKey(result.id), svg.text, 'EX', 60 * 5)

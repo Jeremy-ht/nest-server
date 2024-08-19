@@ -7,7 +7,7 @@ import { env, envBoolean, envNumber } from '~/global/env'
 // eslint-disable-next-line import/order
 import dotenv from 'dotenv'
 
-dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
+dotenv.config({path: `.env.${process.env.NODE_ENV}`})
 
 // 当前通过 npm scripts 执行的命令
 const currentScript = process.env.npm_lifecycle_event

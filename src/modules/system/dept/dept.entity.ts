@@ -24,6 +24,14 @@ export class DeptEntity extends CompleteEntity {
   @ApiProperty({ description: '排序' })
   orderNo: number
 
+  @Column({ nullable: true, default: 0 })
+  @ApiProperty({ description: '排序' })
+  parentId: number
+
+  @Column()
+  @ApiProperty({ description: '部门名称' })
+  mpath: string
+
   @TreeChildren({ cascade: true })
   children: DeptEntity[]
 

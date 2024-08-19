@@ -28,6 +28,8 @@ import { ToolsModule } from './modules/tools/tools.module'
 import { DatabaseModule } from './shared/database/database.module'
 
 import { SocketModule } from './socket/socket.module'
+import { OrderModule } from '~/modules/supplier/order/order.module';
+import { DeliveryModule } from '~/modules/supplier/delivery/delivery.module';
 
 @Module({
   imports: [
@@ -73,6 +75,8 @@ import { SocketModule } from './socket/socket.module'
     HealthModule,
     SseModule,
     NetdiskModule,
+    OrderModule,
+    DeliveryModule,
 
     // biz
 
@@ -85,7 +89,7 @@ import { SocketModule } from './socket/socket.module'
 
     { provide: APP_INTERCEPTOR, useClass: ClassSerializerInterceptor },
     { provide: APP_INTERCEPTOR, useClass: TransformInterceptor },
-    { provide: APP_INTERCEPTOR, useFactory: () => new TimeoutInterceptor(15 * 1000) },
+    { provide: APP_INTERCEPTOR, useFactory: () => new TimeoutInterceptor(30 * 1000) },
     { provide: APP_INTERCEPTOR, useClass: IdempotenceInterceptor },
 
     { provide: APP_GUARD, useClass: JwtAuthGuard },
