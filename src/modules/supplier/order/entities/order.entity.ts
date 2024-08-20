@@ -52,7 +52,7 @@ export class OrderEntity {
   })
   supplierSimpleName: string | null;
 
-  @Column("datetime", {
+  @Column("timestamp", {
     name: "order_time",
     nullable: true,
     comment: "下单时间",
@@ -115,14 +115,14 @@ export class OrderEntity {
   })
   orderAmount: string | null;
 
-  @Column("datetime", {
+  @Column("timestamp", {
     name: "create_time",
     nullable: true,
     comment: "创建日期",
   })
   createTime: Date | null;
 
-  @Column("datetime", {
+  @Column("timestamp", {
     name: "update_time",
     nullable: true,
     comment: "更新日期",

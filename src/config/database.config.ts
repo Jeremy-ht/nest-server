@@ -25,6 +25,7 @@ const dataSourceOptions: DataSourceOptions = {
   entities: ['dist/modules/**/*.entity{.ts,.js}'],
   migrations: ['dist/migrations/*{.ts,.js}'],
   subscribers: ['dist/modules/**/*.subscriber{.ts,.js}'],
+  dateStrings: true
 }
 export const dbRegToken = 'database'
 

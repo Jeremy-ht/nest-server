@@ -9,7 +9,7 @@ export class DeliveryStatusRecordEntity {
   })
   deliveryBh: string | null;
 
-  @PrimaryColumn("datetime", {
+  @PrimaryColumn("timestamp", {
     name: "operate_time",
     comment: "创建时间\r\n",
   })

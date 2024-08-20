@@ -30,6 +30,7 @@ import { DatabaseModule } from './shared/database/database.module'
 import { SocketModule } from './socket/socket.module'
 import { OrderModule } from '~/modules/supplier/order/order.module';
 import { DeliveryModule } from '~/modules/supplier/delivery/delivery.module';
+import { ProductModule } from '~/modules/supplier/product/product.module';
 
 @Module({
   imports: [
@@ -77,6 +78,7 @@ import { DeliveryModule } from '~/modules/supplier/delivery/delivery.module';
     NetdiskModule,
     OrderModule,
     DeliveryModule,
+    ProductModule,
 
     // biz
 

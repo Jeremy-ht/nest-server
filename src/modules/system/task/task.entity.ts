@@ -21,11 +21,11 @@ export class TaskEntity extends CommonEntity {
   @ApiProperty({ description: '任务状态 0禁用 1启用' })
   status: number
 
-  @Column({ name: 'start_time', type: 'datetime', nullable: true })
+  @Column({ name: 'start_time', type: 'timestamp', nullable: true })
   @ApiProperty({ description: '开始时间' })
   startTime: Date
 
-  @Column({ name: 'end_time', type: 'datetime', nullable: true })
+  @Column({ name: 'end_time', type: 'timestamp', nullable: true })
   @ApiProperty({ description: '结束时间' })
   endTime: Date
 

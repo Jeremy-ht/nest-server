@@ -26,7 +26,7 @@ export class DeliveryEntity {
   })
   supplierSimpleName: string | null;
 
-  @Column("datetime", {
+  @Column("timestamp", {
     name: "create_time",
     nullable: true,
     comment: "创建日期",
@@ -72,7 +72,7 @@ export class DeliveryEntity {
   })
   deliverStatus: number | null;
 
-  @Column("datetime", {
+  @Column("timestamp", {
     name: "check_time",
     nullable: true,
     comment: "验收日期",
@@ -189,7 +189,7 @@ export class DeliveryEntity {
   })
   checkPersonName: string | null;
 
-  @Column("datetime", {
+  @Column("timestamp", {
     name: "delivery_time",
     nullable: true,
     comment: "出库时间",
@@ -220,7 +220,7 @@ export class DeliveryEntity {
   })
   syncStatus: string | null;
 
-  @Column("datetime", {
+  @Column("timestamp", {
     name: "update_time",
     nullable: true,
     comment: "更新日期",
@@ -243,7 +243,7 @@ export class DeliveryEntity {
   })
   payApplyPersonName: string | null;
 
-  @Column("datetime", {
+  @Column("timestamp", {
     name: "pay_apply_time",
     nullable: true,
     comment: "支付申请发起时间",
