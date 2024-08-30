@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { OrderEntity } from '~/modules/supplier/order/entities/order.entity';
 
 @Entity("supplier_order_link_person", {schema: "nest_admin"})
@@ -23,5 +23,6 @@ export class OrderLinkPersonEntity {
   linkTelephone: string | null;
 
   @ManyToOne(() => OrderEntity, order => order.orderLinkPerson)
+  @JoinColumn([{ name: "order_bh" }])
   order: OrderEntity;
 }

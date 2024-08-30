@@ -197,7 +197,7 @@ export class OrderItemEntity {
     comment: "二级明细标志",
     length: 1,
   })
-  detailFlag: string | null;
+  detailFlag: string;
 
   @Column("varchar", {
     name: "cat_code",

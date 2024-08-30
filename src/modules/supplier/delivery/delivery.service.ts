@@ -169,7 +169,7 @@ export class DeliveryService {
       .where(qb => {
         const subQur = qb
           .subQuery()
-          .select('DISTINCT relation.orderItemId')
+          .select('distinct relation.orderItemId')
           .from(OrderDeliveryRelationEntity, 'relation')
           .where({deliveryBh})
           .getQuery()
@@ -301,5 +301,5 @@ export class DeliveryService {
 
     return await this.deliveryStatusRecordEntity.find({where: {deliveryBh}})
   }
-
+  
 }

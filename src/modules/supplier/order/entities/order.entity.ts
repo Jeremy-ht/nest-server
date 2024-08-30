@@ -12,7 +12,7 @@ export class OrderEntity {
     length: 64,
   })
   orderBh: string;
-
+  
   @Column("varchar", {
     name: "hospital_order_bh",
     nullable: true,
@@ -20,7 +20,7 @@ export class OrderEntity {
     length: 64,
   })
   hospitalOrderBh: string | null;
-
+  
   @Column("varchar", {
     name: "hospital_id",
     nullable: true,
@@ -28,7 +28,7 @@ export class OrderEntity {
     length: 20,
   })
   hospitalId: string | null;
-
+  
   @Column("varchar", {
     name: "hospital_name",
     nullable: true,
@@ -36,14 +36,14 @@ export class OrderEntity {
     length: 255,
   })
   hospitalName: string | null;
-
+  
   @Column("bigint", {
     name: "supplier_id",
     nullable: true,
     comment: "供货商id",
   })
   supplierId: string | null;
-
+  
   @Column("varchar", {
     name: "supplier_simple_name",
     nullable: true,
@@ -51,14 +51,14 @@ export class OrderEntity {
     length: 255,
   })
   supplierSimpleName: string | null;
-
+  
   @Column("timestamp", {
     name: "order_time",
     nullable: true,
     comment: "下单时间",
   })
   orderTime: Date | null;
-
+  
   @Column("varchar", {
     name: "area_code",
     nullable: true,
@@ -66,7 +66,7 @@ export class OrderEntity {
     length: 64,
   })
   areaCode: string | null;
-
+  
   @Column("varchar", {
     name: "area_name",
     nullable: true,
@@ -74,7 +74,7 @@ export class OrderEntity {
     length: 255,
   })
   areaName: string | null;
-
+  
   @Column("varchar", {
     name: "dept_code",
     nullable: true,
@@ -82,7 +82,7 @@ export class OrderEntity {
     length: 64,
   })
   deptCode: string | null;
-
+  
   @Column("varchar", {
     name: "dept_name",
     nullable: true,
@@ -90,7 +90,7 @@ export class OrderEntity {
     length: 255,
   })
   deptName: string | null;
-
+  
   @Column("varchar", {
     name: "order_status",
     nullable: true,
@@ -98,14 +98,14 @@ export class OrderEntity {
     length: 64,
   })
   orderStatus: string | null;
-
+  
   @Column("int", {
     name: "total_num",
     nullable: true,
     comment: "明细数量"
   })
   totalNum: number | null;
-
+  
   @Column("decimal", {
     name: "order_amount",
     nullable: true,
@@ -114,21 +114,21 @@ export class OrderEntity {
     scale: 2,
   })
   orderAmount: string | null;
-
+  
   @Column("timestamp", {
     name: "create_time",
     nullable: true,
     comment: "创建日期",
   })
   createTime: Date | null;
-
+  
   @Column("timestamp", {
     name: "update_time",
     nullable: true,
     comment: "更新日期",
   })
   updateTime: Date | null;
-
+  
   @Column("varchar", {
     name: "order_person_name",
     nullable: true,
@@ -136,7 +136,7 @@ export class OrderEntity {
     length: 255,
   })
   orderPersonName: string | null;
-
+  
   @Column("varchar", {
     name: "order_person_code",
     nullable: true,
@@ -144,7 +144,7 @@ export class OrderEntity {
     length: 64,
   })
   orderPersonCode: string | null;
-
+  
   @Column("varchar", {
     name: "contact_info",
     nullable: true,
@@ -152,7 +152,7 @@ export class OrderEntity {
     length: 255,
   })
   contactInfo: string | null;
-
+  
   @Column("varchar", {
     name: "remark",
     nullable: true,
@@ -160,7 +160,7 @@ export class OrderEntity {
     length: 255,
   })
   remark: string | null;
-
+  
   @Column("varchar", {
     name: "hospital_simple_name",
     nullable: true,
@@ -168,7 +168,7 @@ export class OrderEntity {
     length: 255,
   })
   hospitalSimpleName: string | null;
-
+  
   @Column("varchar", {
     name: "delivery_address",
     nullable: true,
@@ -176,21 +176,21 @@ export class OrderEntity {
     length: 255,
   })
   deliveryAddress: string | null;
-
+  
   @Column("int", {
     name: "read_sign",
     nullable: true,
     comment: "是否已读 0/Null 未读 1 已读",
   })
   readSign: number | null;
-
+  
   @Column("int", {
     name: "out_sign",
     nullable: true,
     comment: "0/null 未超时 1 已超时",
   })
   outSign: number | null;
-
+  
   @Column("varchar", {
     name: "on_line_flag",
     nullable: true,
@@ -198,7 +198,7 @@ export class OrderEntity {
     length: 255,
   })
   onLineFlag: string | null;
-
+  
   @Column("varchar", {
     name: "pack_flag",
     nullable: true,
@@ -206,7 +206,7 @@ export class OrderEntity {
     length: 255,
   })
   packFlag: string | null;
-
+  
   @Column("varchar", {
     name: "ph_flag",
     nullable: true,
@@ -214,7 +214,7 @@ export class OrderEntity {
     length: 255,
   })
   phFlag: string | null;
-
+  
   @Column("varchar", {
     name: "sync_status",
     nullable: true,
@@ -222,7 +222,7 @@ export class OrderEntity {
     length: 255,
   })
   syncStatus: string | null;
-
+  
   @Column("varchar", {
     name: "provincial_platform_order_bh",
     nullable: true,
@@ -230,7 +230,7 @@ export class OrderEntity {
     length: 255,
   })
   provincialPlatformOrderBh: string | null;
-
+  
   @Column("varchar", {
     name: "supplier_name",
     nullable: true,
@@ -238,13 +238,13 @@ export class OrderEntity {
     length: 255,
   })
   supplierName: string | null;
-
+  
   @OneToMany(() => OrderItemEntity, orderItem => orderItem.order)
   orderItem: OrderItemEntity[];
-
+  
   @OneToMany(() => OrderLinkPersonEntity, orderLinkPerson => orderLinkPerson.order)
   orderLinkPerson: OrderLinkPersonEntity[];
-
+  
   @OneToMany(() => OrderDeliveryRelationEntity, orderDeliverys => orderDeliverys.order)
   orderDeliverys: OrderDeliveryRelationEntity[];
 }

@@ -14,45 +14,44 @@ import {
 export class DeliveryController {
   constructor(private readonly deliveryService: DeliveryService) {
   }
-
-
-  @ApiOperation({summary: '送货单列表'})
+  
+  @ApiOperation({ summary: '送货单列表' })
   @Get('getDeliveryListByPage')
   getDeliveryListByPage(@Query() deliveryQueryDto: DeliveryQueryDto) {
     return this.deliveryService.getDeliveryListByPage(deliveryQueryDto);
   }
-
-  @ApiOperation({summary: '送货单详情'})
+  
+  @ApiOperation({ summary: '送货单详情' })
   @Get('detail')
   findOne(@Query() detailDto: DeliveryDetailDto) {
     return this.deliveryService.findOneByDeliveryBh(detailDto);
   }
-
-  @ApiOperation({summary: '送货单流转状态列表'})
+  
+  @ApiOperation({ summary: '送货单流转状态列表' })
   @Get('getDeliveryStatusRecordList')
   getDeliveryStatusRecordList(@Query() detailDto: DeliveryDetailDto) {
     return this.deliveryService.getDeliveryStatusRecordList(detailDto);
   }
-
-  @ApiOperation({summary: '根据送货单号获取二级明细'})
+  
+  @ApiOperation({ summary: '根据送货单号获取二级明细' })
   @Get('getDeliveryItemDetail')
   getDeliveryItemDetail(@Query() detailDto: DeliveryDetailDto) {
     return this.deliveryService.getDeliveryItemDetail(detailDto);
   }
-
-
-  @ApiOperation({summary: '获取产品二级明细'})
+  
+  @ApiOperation({ summary: '获取产品二级明细' })
   @Get('getSecondDeliveryList')
   getSecondDeliveryList(@Query() secondDto: DeliverySecondDto) {
     return this.deliveryService.getSecondDeliveryList(secondDto);
   }
-
-
-  @ApiOperation({summary: '撤销送货单'})
+  
+  @ApiOperation({ summary: '撤销送货单' })
   @Post('cancelDelivery')
   cancelDelivery(@Body() detailDto: DeliveryDetailDto) {
     return this.deliveryService.cancelDelivery(detailDto);
   }
+  
 
-
+  
+  
 }
